@@ -1,0 +1,67 @@
+.buttonOne[aria-expanded='true'] .line {
+	transition:
+		scale 150ms ease-in,
+		opacity 150ms ease-in,
+		rotate 300ms ease 150ms;
+	transform-box: fill-box;
+}
+
+.buttonOne .line {
+	transition:
+		rotate 300ms ease,
+		scale 150ms ease-in,
+		opacity 150ms ease-in;
+	transform-box: fill-box;
+}
+
+.buttonOne[aria-expanded='true'] .line:nth-child(1) {
+	transform-origin: 1px 0;
+	rotate: 45deg;
+}
+
+.buttonOne .line:nth-child(1) {
+	transform-origin: 1px 0;
+	rotate: 0deg;
+}
+
+.buttonOne[aria-expanded='true'] .line:nth-child(2) {
+	transform-origin: 2px 0;
+	rotate: -45deg;
+}
+
+.buttonOne .line:nth-child(2) {
+	transform-origin: 2px 0;
+	rotate: 0deg;
+}
+
+.buttonOne[aria-expanded='true'] .line:nth-child(3) {
+	scale: 0;
+	opacity: 0;
+	transform-origin: center;
+}
+
+.buttonOne .line:nth-child(3) {
+	scale: 1;
+	opacity: 1;
+	transform-origin: center;
+}
+
+.buttonOne[aria-expanded='true'] .line:nth-child(4) {
+	transform-origin: 1px 0;
+	rotate: -45deg;
+}
+
+.buttonOne .line:nth-child(4) {
+	transform-origin: 1px 0;
+	rotate: 0deg;
+}
+
+.buttonOne[aria-expanded='true'] .line:nth-child(5) {
+	transform-origin: 2px 0;
+	rotate: 45deg;
+}
+
+.buttonOne .line:nth-child(5) {
+	transform-origin: 2px 0;
+	rotate: 0deg;
+}

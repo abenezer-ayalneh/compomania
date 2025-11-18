@@ -7,6 +7,7 @@ import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
 import importPlugin from 'eslint-plugin-import'
 import nextPlugin from '@next/eslint-plugin-next'
 import prettierConfig from 'eslint-config-prettier'
+import globals from 'globals'
 
 export default [
 	{
@@ -25,6 +26,7 @@ export default [
 				},
 			},
 			globals: {
+				...globals.browser,
 				React: 'readonly',
 				JSX: 'readonly',
 				NodeJS: 'readonly',
