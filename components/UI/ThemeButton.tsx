@@ -83,8 +83,8 @@ export default function ThemeButton() {
 					variants={raysVariants}
 					initial="hidden"
 					animate={theme === 'dark' ? 'hidden' : 'visible'}
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 					className="stroke-6 stroke-yellow-600">
 					<motion.path variants={rayVariant} d="M13.2083 13.208L19.0833 19.083" />
 					<motion.path variants={rayVariant} d="M1 42.6665H9.33333" />

@@ -1,0 +1,54 @@
+/* Initial state of the overlay: hidden, full viewport, ready to animate */
+.sideBar {
+	/* Use clip-path to hide it initially, anchored at top-left */
+	clip-path: circle(0vmax at 0% 0%);
+
+	/* Ensure it covers the entire viewport */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 50; /* Above most content */
+	pointer-events: none; /* Allows clicks to pass through when hidden */
+
+	/* Set the initial animation property for when the class is toggled */
+	animation: none;
+}
+
+/* Class added by JavaScript to trigger the animation */
+.showSideBar {
+	animation: circular-expand 0.6s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+	pointer-events: auto; /* Re-enable pointer events during/after animation */
+}
+
+.hideSideBar {
+	animation: circular-shrink 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+	pointer-events: none; /* Re-enable pointer events during/after animation */
+}
+
+/* Define the main CSS animation for the circular reveal */
+@keyframes circular-expand {
+	from {
+		/* Start with a circle of 0 radius anchored at the top-left corner (0% 0%) */
+		clip-path: circle(0vmax at 0% 0%);
+	}
+	to {
+		/* Expand the circle from the top-left corner (0% 0%) to cover the entire viewport.
+           200vmax is used to guarantee coverage of the furthest point (bottom-right). */
+		clip-path: circle(150vmax at 0% 0%);
+	}
+}
+
+/* Define the main CSS animation for the circular reveal */
+@keyframes circular-shrink {
+	from {
+		/* Start from the circle from the top-left corner (0% 0%) to cover the entire viewport.
+           200vmax is used to guarantee coverage of the furthest point (bottom-right). */
+		clip-path: circle(150vmax at 0% 0%);
+	}
+	to {
+		/* End with a circle of 0 radius anchored at the top-left corner (0% 0%) */
+		clip-path: circle(0vmax at 0% 0%);
+	}
+}
